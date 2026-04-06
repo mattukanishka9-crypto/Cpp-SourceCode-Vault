@@ -1,0 +1,492 @@
+/* cstyle.css – PaleVioletRed, Black & White Theme (Clean & Modern) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,  #7ea4cb 0%, #eeb6b6 100%);
+    color: #ecedee;                      /* Black */
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* LOGO STYLES */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.9rem;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.logo:hover {
+     transform: scale(1.06); 
+    }
+.logo-icon {
+     width: 46px; height: 46px;
+     }
+.logo-text { 
+    letter-spacing: 1.2px; 
+    text-transform: uppercase; 
+}
+.logo-text span { 
+    color: rgb(63, 65, 215); 
+}
+@media (max-width: 768px) {
+  .logo { 
+    font-size: 1.5rem; 
+}
+  .logo-icon {
+     width: 38px;
+      height: 38px;
+     }
+}
+
+/* Header & Hero Section */
+.header {
+    min-height: 100vh;
+    width: 100%;
+     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://source.unsplash.com/random/1600x900/?code,programming') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 38px;
+    color: #c46778;
+    text-align: center;
+}
+
+.tagline {
+    font-size: 15px;
+    color: #1f1a1a;
+    text-align: center;
+    max-width: 650px;
+    margin: 10px auto;
+}
+nav {
+    padding: 2rem 6%;
+    display: flex;
+    justify-content: center;
+   background: linear-gradient(135deg,  #7ea4cb 0%, #eeb6b6 100%);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(156, 153, 153, 0.3);
+}
+
+
+nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-links ul li {
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fdf2f2;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-links ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background-color: palevioletred;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links ul li a:hover {
+    color: rgb(246, 179, 201);
+}
+
+.nav-links ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Text Box */
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f0eaea;
+    width: 90%;
+    max-width: 900px;
+}
+
+.text-box h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: rgb(230, 218, 222);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.text-box p {
+    font-size: 1.3rem;
+    margin: 1.5rem 0;
+    color: #f8f6f6;
+    font-weight: 300;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid palevioletred;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(219, 112, 147, 0.3);
+}
+
+.hero-btn:hover {
+    background: palevioletred;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(219, 112, 147, 0.5);
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Topic Accordion */
+.topic {
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.topic:hover {
+    transform: translateY(-5px);
+}
+
+.topic h2 {
+    background: palevioletred;
+    color: #fff;
+    padding: 1.2rem 1.5rem;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.topic h2::after {
+    content: '+';
+    font-size: 1.8rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.topic h2.active::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.topic h2:hover {
+       background: linear-gradient(135deg,#eeb6b6 40%,  #7ea4cb 60%);
+}
+
+.subtopics {
+    display: none;
+    padding: 1.5rem;
+    background: linear-gradient(100deg,#eeb6b6 20%,  #7ea4cb 60%);
+    border-top: 1px solid #eee;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.subtopics a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    padding: 0.7rem 0;
+    font-size: 1rem;
+    border-bottom: 1px dashed #ddd;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.subtopics a::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: palevioletred;
+    font-weight: bold;
+}
+
+.subtopics a:hover {
+    color: palevioletred;
+    padding-left: 2rem;
+    border-color: palevioletred;
+}
+
+/* Menu Section */
+.menu {
+    padding: 5rem 0;
+    text-align: center;
+    background: linear-gradient(135deg,  #7ea4cb 0%, #eeb6b6 100%);
+}
+
+.menu h1 {
+    font-size: 2.8rem;
+    color: palevioletred;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.menu > p {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.menu-col {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    background: #eeb6b6;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid #eee;
+}
+
+.menu-col:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(219, 112, 147, 0.15);
+    border-color: palevioletred;
+}
+
+.menu-col h3 {
+    font-size: 1.6rem;
+    color: palevioletred;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.menu-col p {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+footer .container p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .text-box h1 { font-size: 3.5rem; }
+    .row { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 768px) {
+    nav { padding: 1.5rem 4%; }
+    .nav-links ul { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .text-box h1 { font-size: 2.8rem; }
+    .text-box p { font-size: 1.1rem; }
+    .hero-btn { padding: 12px 30px; font-size: 1rem; }
+    .menu h1 { font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+    .text-box h1 { font-size: 2.3rem; }
+    .topic h2 { font-size: 1.2rem; padding: 1rem; }
+    .subtopics a { font-size: 0.95rem; }
+}
+
+
+
+/*-------------------------------------------call to action--------------------------------------------------------*/
+.cta {
+    width: 80%;
+    margin: 100px auto;
+    padding: 60px 40px;
+    text-align: center;
+
+    /* Site color palette */
+    background-color: #eeb6b6;           /* black background */
+    border: 2px solid palevioletred;
+    border-radius: 20px;
+    color: #f6f2f2;                      /* main text white */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cta h1 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: palevioletred;                /* heading matches your accent color */
+}
+
+/* Contact details */
+.cta p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* Mail / phone / address links */
+.cta p a {
+    color: palevioletred;                /* accent color for links */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cta p a:hover {
+    color: #ff80b5;                      /* lighter pink hover */
+}
+
+/* CTA Button */
+.hero-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 40px;
+    background: palevioletred;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #ff80b5;                 /* lighter tone on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(255, 192, 203, 0.3);
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+    .cta {
+        width: 90%;
+        padding: 40px 20px;
+    }
+
+    .cta h1 {
+        font-size: 1.6rem;
+    }
+
+    .cta p {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================== Footer ====================================================================== */
+.footer {
+    width: 100%;
+    background-color: #111;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 35px 20px;
+    position: relative;
+    bottom: 0;
+    overflow: visible;     /* ensures dropdowns above aren’t clipped */
+    z-index: 1;            /* stay behind dropdown menus */
+}
+
+.footer h4 {
+    margin-bottom: 12px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: palevioletred;
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: #f2f2f2;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: palevioletred;
+}
+
+.footer-bottom {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Critical: keep dropdown visible above footer and any content */
+.dropdown-content,
+.dropdown_menu {
+    z-index: 9999 !important;
+    overflow: visible !important;
+}
